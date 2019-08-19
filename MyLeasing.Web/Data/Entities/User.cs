@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace MyLeasing.Web.Data.Entities
 {
@@ -26,5 +28,10 @@ namespace MyLeasing.Web.Data.Entities
         public string FullName => $"{FirstName} {LastName}";
 
         public string FullNameWithDocument => $"{FirstName} {LastName} - {Document}";
+
+        public static implicit operator User(Task<User> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
