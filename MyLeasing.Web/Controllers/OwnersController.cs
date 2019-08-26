@@ -251,6 +251,8 @@ namespace MyLeasing.Web.Controllers
                 await _dataContext.SaveChangesAsync();
                 return RedirectToAction($"Details/{model.OwnerId}");
             }
+
+            model.PropertyTypes = _combosHelper.GetComboPropertyTypes();
             return View(model);
         }
 
@@ -400,6 +402,7 @@ namespace MyLeasing.Web.Controllers
                 return RedirectToAction($"{nameof(DetailsProperty)}/{model.PropertyId}");
             }
 
+            model.Lessees = _combosHelper.GetComboLessees();
             return View(model);
         }
 
