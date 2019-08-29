@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using MyLeasing.Web.Data.Entities;
 using MyLeasing.Web.Models;
+using System.Threading.Tasks;
 
 namespace MyLeasing.Web.Helpers
 {
@@ -23,9 +23,12 @@ namespace MyLeasing.Web.Helpers
 
         Task<bool> DeleteUserAsync(string email);
 
-        Task <IdentityResult>UpdateUserAsync(User user);
+        Task<IdentityResult> UpdateUserAsync(User user);
 
-       
+        Task<SignInResult> ValidatePasswordAsync(User user, string password);
+
+
+
 
 
 
