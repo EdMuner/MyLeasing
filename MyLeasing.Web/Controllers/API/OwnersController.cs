@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 namespace MyLeasing.Web.Controllers.API
 {
 
+
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
