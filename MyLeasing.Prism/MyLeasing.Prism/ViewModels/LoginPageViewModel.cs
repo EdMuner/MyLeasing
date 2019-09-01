@@ -66,6 +66,19 @@ namespace MyLeasing.Prism.ViewModels
             IsRunning = true;
             IsEnabled = false;
 
+
+
+            var url = App.Current.Resources["UrlAPI"].ToString();
+            var connection = await _apiService.CheckConnectionAsync(url);
+            if (!connection)
+            {
+                IsEnabled = true;
+                IsRunning = false;
+                await App.Current.MainPage.DisplayAlert("Error", "Check the internet connection.", "Accept");
+                return;
+            }
+
+
             var request = new TokenRequest
             {
                 Password = Password,
@@ -73,7 +86,6 @@ namespace MyLeasing.Prism.ViewModels
 
             };
 
-            var url = App.Current.Resources["UrlAPI"].ToString();
             var response = await _apiService.GetTokenAsync(url, "Account", "/CreateToken", request);
 
 
