@@ -4,6 +4,7 @@ using MyLeasing.Prism.ViewModels;
 using MyLeasing.Prism.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MyLeasing.Common.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyLeasing.Prism
@@ -28,6 +29,7 @@ namespace MyLeasing.Prism
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
         }
