@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\Properties\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MyLeasing.Common\MyLeasing.Common.csproj" />
   </ItemGroup>
 
